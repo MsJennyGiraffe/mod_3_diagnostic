@@ -16,7 +16,6 @@ RSpec.feature "User can search" do
     click_button "Locate"
 
     expect(current_path).to eq("/search?zip=80203")
-    expect(page).to have_content("stations")
     expect(page).to have_content("Name")
     expect(page).to have_content("Addess")
     expect(page).to have_content("Fuel Types")
