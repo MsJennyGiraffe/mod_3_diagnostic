@@ -11,10 +11,11 @@
 
 class NrelService
   def initialize
-    @connection = Faraday.get('https://developer.nrel.gov/api/alt-fuel-stations/v1.json')
+    @connection = Faraday.new('https://developer.nrel.gov/api/alt-fuel-stations/v1.json')
   end
 
   def get_station#(zipcode)
-    @connection.get("fuel_type=E85,ELEC&state=CA&limit=2&api_key=nrel_key&format=JSON")
+    response = @connection.get("fuel_type=E85,ELEC&state=CA&limit=2&new_key=#{nrel_api_key}&format=JSON")
+    JSON.parse(response.body)
   end
 end
