@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "less-rails"
 gem "faraday"
 gem "rspec-rails"
+gem "figaro"
 
 group :development, :test do
   gem 'byebug'
