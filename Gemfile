@@ -13,10 +13,13 @@ gem "therubyracer"
 gem "less-rails"
 gem "faraday"
 gem "rspec-rails"
+gem "figaro"
 
 group :development, :test do
+  gem "vcr"
   gem 'byebug'
   gem "capybara"
+  gem "fakeweb"
 end
 
 group :development do
