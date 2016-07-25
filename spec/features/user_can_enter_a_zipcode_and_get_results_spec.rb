@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 # As a user
 # When I visit "/"
@@ -10,9 +10,9 @@ require 'spec_helper'
 # And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times
 
 RSpec.feature "User can search" do
-  describe "user can enter a zipcode and see results" do
+  scenario "user can enter a zipcode and see results" do
     visit "/"
-    fill_in "80203"
+    fill_in "q", with: "80203"
     click_button "Locate"
 
     expect(current_path).to eq("/search?zip=80203")

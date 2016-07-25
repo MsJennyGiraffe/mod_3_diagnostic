@@ -8,10 +8,5 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  VCR.configure do |config|
-    config.cassette_library_dir = "fixtures/vcr_cassettes"
-    config.hook_into :webmock # or :fakeweb
-  end
-
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
